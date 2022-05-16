@@ -1,0 +1,384 @@
+CRO_communist = {
+	name = "Croatian communist plan"
+	desc = "Commies"
+
+	allowed = {
+		original_tag = CRO
+
+	}
+	enable = {
+		
+			has_government=communism
+		
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+			CRO_unbancom
+			CRO_incident_in_split
+			CRO_boostcom
+			CRO_home_guard
+			CRO_preparepartisans	
+			CRO_build_the_nation
+			CRO_starttherevolution
+			CRO_eliminate_capitalism
+			CRO_construction_effort
+			CRO_antiustasheraids
+			CRO_production_effort
+			CRO_nationalization
+			CRO_infrastructure_effort
+			CRO_communist_youth
+			CRO_Dalmatina
+			CRO_social_reforms
+			CRO_state_security
+			CRO_collectivisation
+			CRO_communist_army
+			CRO_industrialisation
+			CRO_urbanisation
+			CRO_expand_the_university_of_zagreb
+			CRO_stateatheism
+			CRO_organisestatecom
+			CRO_production_effort_2
+			CRO_cutfoodrations
+			CRO_kom_omladina
+			CRO_factoriestotheworkers
+			CRO_aviation_effort
+			CRO_expand_the_split_shipyards
+			CRO_fouryearplan
+			CRO_prof_army_com
+			CRO_sign_pact_with_soviets
+			CRO_bosniakom
+			CRO_industrial_planning
+			CRO_extra_tech_slot_2
+			CRO_small_arms
+			CRO_army_maneuvers
+			CRO_mountain_brigades
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
+CRO_democratic = {
+	name = "Croatian Democratic Plan"
+	desc = "Demos"
+
+	allowed = {
+		original_tag = CRO
+
+	}
+	enable = {
+	OR={
+			has_game_rule = {
+						rule = yug_fragmentation_status 
+					option = YUG_FRAGMENTED 
+			}
+			has_game_rule = {
+						rule = yug_fragmentation_status 
+						option = YUG_FRAGMENTED_SERBIA
+			}
+			has_game_rule = {
+						rule = yug_fragmentation_status 
+						option = YUG_FRAGMENTED_CROATIA
+			}
+	}
+		
+		has_government=democratic
+		
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+			CRO_freeban
+			CRO_givehsssupport
+			CRO_zandermanija
+			CRO_home_guard
+			CRO_build_the_nation
+			CRO_hss	
+			CRO_trading_infrastructures
+			CRO_serbianminority
+			CRO_construction_effort
+			CRO_foodration
+			CRO_production_effort
+			CRO_nojobs
+			CRO_infrastructure_effort
+			CRO_zagreb_investment_focus
+			CRO_Dalmatina
+			CRO_catholic_dominance_focus2
+			CRO_zandermanija2
+			CRO_antifascist
+			CRO_brigade_cro
+			CRO_bancommunism
+			CRO_kuna
+			CRO_expand_the_university_of_zagreb
+			CRO_integrate_muslim_croats_focus2
+			CRO_zupanije
+			CRO_production_effort_2
+			CRO_integrate_orthodox_croats_focus2
+			CRO_endrationing
+			CRO_givejobs
+			CRO_aviation_effort
+			CRO_expand_the_split_shipyards
+			CRO_helpcitizens
+			CRO_organisestatedem
+			CRO_armyofboc
+			CRO_prepareforwar
+			CRO_joinallies
+			CRO_alliesport
+			CRO_alliesmilhelp
+			CRO_industrial_planning
+			CRO_extra_tech_slot_2
+			CRO_small_arms
+			CRO_army_maneuvers
+			CRO_mountain_brigades
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
+CRO_fascist = {
+	name = "Croatian fascist plan"
+	desc = "aa"
+
+	allowed = {
+		original_tag = CRO
+	}
+	enable = {
+		AND = {
+		has_government=fascism
+		NOT={OR={is_puppet_of=GER
+		is_puppet_of=ITA}}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+			CRO_side_with_pavelic
+			CRO_pro_ustashe_propaganda
+			CRO_cooperate_with_hss
+			CRO_home_guard
+			CRO_build_the_nation
+			CRO_proclaim_ndh2	
+			CRO_ustashe_vojnica
+			CRO_pavelic_cult
+			CRO_kuna2
+			CRO_construction_effort
+			CRO_ask_ger_for_support
+			CRO_production_effort
+			CRO_allegiancetothechurch
+			CRO_infrastructure_effort
+			CRO_starttheworks
+			CRO_Dalmatina
+			CRO_ptz
+			CRO_demand_annexation_of_bosnia
+			CRO_invite_german_officers
+			CRO_mussolini_agreement
+			CRO_catholic_dominance_focus
+			CRO_arrest_communist_leaders
+			CRO_expand_the_university_of_zagreb
+			CRO_ita_ger_cro
+			CRO_end_partisan_uprisings
+			CRO_ger_mil_academy
+			CRO_production_effort_2
+			CRO_integrate_muslim_croats_focus
+			CRO_vladandh
+			CRO_ndh_zupanije	
+			CRO_end_food_rationing
+			CRO_help_in_stalingrad
+			CRO_aviation_effort
+			CRO_expand_the_split_shipyards
+			CRO_create_uns
+			CRO_ustashe_propaganda
+			CRO_join_axis
+			CRO_industrial_planning
+			CRO_extra_tech_slot_2
+			CRO_small_arms
+			CRO_army_maneuvers
+			CRO_mountain_brigades
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+}
+
+CRO_fascist_puppet = {
+	name = "Croatian fascist puppet plan"
+	desc = "aa"
+
+	allowed = {
+		original_tag = CRO
+	}
+	enable = {
+		has_government=fascism
+		OR={
+		is_puppet_of=GER
+		is_puppet_of=ITA
+		}
+		is_historical_focus_on = yes
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+			CRO_proclaim_ndh
+			CRO_forcemacek
+			CRO_pro_ustashe_propaganda
+			CRO_home_guard
+			CRO_treatyrome	
+			CRO_ustashe_vojnica
+			CRO_build_the_nation
+			CRO_drina
+			CRO_kuna2
+			CRO_construction_effort
+			CRO_germanofficers
+			CRO_production_effort
+			CRO_allegiancetothechurch
+			CRO_infrastructure_effort
+			CRO_anti_partizan_tactics
+			CRO_Dalmatina
+			CRO_fascistpropaganda
+			CRO_italian_influence_focus
+			CRO_poglavnikcult
+			CRO_catholic_dominance_focus
+			CRO_italo_croat_legion
+			CRO_expand_the_university_of_zagreb
+			CRO_ita_ger_cro
+			CRO_Kroatische_Legion
+			CRO_endpartisans
+			CRO_production_effort_2
+			CRO_integrate_muslim_croats_focus
+			CRO_end_food_rationing2
+			CRO_ndhpuppetzupe	
+			CRO_gestapohelp
+			CRO_integrate_orthodox_croats_focus
+			CRO_aviation_effort
+			CRO_expand_the_split_shipyards
+			CRO_renouncetreatyofrome
+			CRO_staycapital
+			CRO_purge
+			CRO_industrial_planning
+			CRO_indepedence
+			CRO_extra_tech_slot_2
+			CRO_small_arms
+			CRO_stayloyal
+			CRO_army_maneuvers
+			CRO_mountain_brigades
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+}

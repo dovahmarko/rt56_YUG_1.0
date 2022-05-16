@@ -1,0 +1,3352 @@
+﻿###########################
+# Yugoslavian Events
+###########################
+
+add_namespace = yugoslavia
+
+country_event = {
+	id = yugoslavia.1
+	title = yugoslavia.1.t
+	desc = yugoslavia.1.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	trigger = {
+		tag = YUG
+		has_country_leader =  {
+			name = "Milan Stojadinović"
+			ruling_only = yes
+		}
+	
+		has_completed_focus = YUG_Stojadinovic_Macek_Talks
+	}
+	
+	mean_time_to_happen = { days = 7 }
+
+	fire_only_once = yes
+	
+	option = {
+		name = "Replace Stojadinović with Cvetković"
+		ai_chance = {
+			factor = 90
+		}
+		add_political_power = -25
+		add_stability=0.05
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Dragiša Cvetković"
+			desc = "POLITICS_MILAN_GROL_DESC"
+			picture = "gfx/leaders/YUG/r56_portrait_YUG_Dragisa_Cvetkovic.dds"
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				popular_figurehead2
+				great_architect
+				r56_trait_opposed_to_communism
+			}
+		}
+		set_party_name = { 
+			ideology = neutrality
+			name = YUG_JRS_neutrality_party
+			long_name = YUG_JRS_neutrality_party_long
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.2
+	title = Yyugoslavia.2.t
+	desc = yugoslavia.2.d
+	picture = GFX_report_event_generic_funeral
+
+	trigger = {
+		tag = YUG
+		has_capitulated = yes
+		has_war_with = GER
+		GER = {
+			has_government = fascism
+		}
+		owns_state = 104
+		any_enemy_country = {
+			is_in_faction_with = GER
+			controls_state = 104
+		}
+		date > 1943.11.11
+		date < 1944.1.1
+		
+	}
+	
+	mean_time_to_happen = { days = 365 }
+
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = ivo_lola_ribar_dead
+		}
+	}
+	
+	option = {
+		name = yugoslavia.2.a
+		ai_chance = {
+			factor = 90
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.025
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.3
+	title = yugoslavia.3.t
+	desc = yugoslavia.3.d
+	picture = GFX_report_event_generic_funeral
+
+	trigger = {
+		tag = YUG
+		BOS = {
+			OR = {
+				exists = no
+				is_subject_of = YUG
+			}
+		}
+		date > 1939.6.24
+		date < 1939.6.30
+	}
+	
+	mean_time_to_happen = { days = 7 }
+
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = mehmed_spaho_dead
+		}
+	}
+	
+	option = {
+		name = yugoslavia.3.a
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.4
+	title = yugoslavia.4.t
+	desc = yugoslavia.4.d
+	picture = GFX_report_event_generic_funeral
+
+	trigger = {
+		tag = YUG
+		date > 1940.2.12
+		date < 1940.2.19
+	}
+	
+	mean_time_to_happen = { days = 7 }
+
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = ljubomir_davidovic_dead
+			if = {
+				limit = {
+					has_country_leader =  {
+						name = "Ljubomir Davidović"
+						ruling_only = yes
+					}
+				}
+				kill_country_leader = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_leader =  {
+							name = "Ljubomir Davidović"
+							ruling_only = yes
+						}
+					}
+				}
+				create_country_leader = {
+					name = "Milan Grol"
+					desc = "POLITICS_MILAN_GROL_DESC"
+					picture = "gfx/leaders/YUG/Portrait_Yugoslavia_Milan_Grol.dds"
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+						
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = yugoslavia.4.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {
+		name = yugoslavia.4.b
+		trigger = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.5
+	title = yugoslavia.5.t
+	desc = yugoslavia.5.d
+	picture = GFX_report_event_yug_svetozar_pribicevic
+
+	trigger = {
+		tag = YUG
+		date > 1936.9.8
+		date < 1936.9.20
+	}
+	
+	mean_time_to_happen = { days = 7 }
+
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = svetozar_pribicevic_dead
+		}
+	}
+	
+	option = {
+		name = yugoslavia.5.a
+		ai_chance = {
+			factor = 90
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.025
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.6
+	title =  yugoslavia.6.t
+	desc =  yugoslavia.6.d
+	picture = GFX_report_event_generic_funeral
+
+	trigger = {
+		tag = YUG
+		date > 1940.12.7
+		date < 1940.12.15
+	}
+	
+	mean_time_to_happen = { days = 7 }
+
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = anton_korosec_dead
+		}
+	}
+	
+	option = {
+		name =  yugoslavia.6.a
+		ai_chance = {
+			factor = 90
+		}
+	}
+}
+
+
+
+
+country_event = {
+	id = yugoslavia.20
+	title = yugoslavia.20.t
+	desc = yugoslavia.20.d
+	picture = GFX_report_event_YUG_assasination
+
+	is_triggered_only = yes
+	
+	option = {
+		name = yugoslavia.20.a
+		ai_chance = { factor = 99 }
+	}
+}
+
+country_event = {
+	id = yugoslavia.21
+	title = yugoslavia.21.t
+	desc = yugoslavia.21.d
+	picture = GFX_report_fate
+
+	is_triggered_only = yes
+	
+	option = {
+		name = yugoslavia.21.a
+		ai_chance = { factor = 50 } 
+		add_political_power = 50
+		add_stability = -0.05
+	}
+
+	option = {
+		name = yugoslavia.21.b
+		ai_chance = { factor = 50 }
+		add_political_power = -50
+		add_stability=0.05
+	}
+}
+
+country_event = {
+	id = yugoslavia.23
+	title = yugoslavia.23.t
+	desc = yugoslavia.23.d
+	picture = GFX_report_demoyug
+
+	is_triggered_only = yes
+	
+	option = {
+		name = yugoslavia.23.a
+		ai_chance = { factor = 99 } 
+	}
+	
+}
+
+country_event = { 
+	id = yugoslavia.24
+	title = yugoslavia.24.t
+	desc = yugoslavia.24.d
+
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = yugoslavia.24.a
+		add_stability=0.05
+		add_political_power=20
+		ai_chance = { factor = 99 } 
+	}
+}
+
+country_event = {
+	id = yugoslavia.25
+	title = yugoslavia.25.t
+	desc = yugoslavia.25.d
+	picture = GFX_report_protest
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = yugoslavia.25.a
+		ai_chance = { factor = 99 } 
+	}
+}
+
+country_event = {
+	id = yugoslavia.26
+	title = yugoslavia.26.t
+	desc = yugoslavia.26.d
+	picture = GFX_report_banat
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_war_with = YUG }
+	}
+
+	option = {
+		name = yugoslavia.26.a
+		ai_chance = {
+			factor = 15
+		}
+			YUG = {
+				transfer_state = 82
+				add_state_core = 82
+				diplomatic_relation = { 
+	                        country = ROM 
+	                        relation = non_aggression_pact 
+                               }
+			}
+			
+			YUG = { country_event =	yugoslavia.48 }
+	}
+
+	option = {
+		name = yugoslavia.26.b
+		ai_chance = {
+			factor = 85
+				}
+		YUG = { country_event = yugoslavia.46 }	s
+
+		ROM={add_stability=0.05
+		add_war_support=0.05
+		add_political_power=50}
+			
+	}
+}
+
+country_event = {
+	id = yugoslavia.27
+	title = yugoslavia.27.t
+	desc = yugoslavia.27.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = yugoslavia.27.a
+		ai_chance = { factor = 80 } 
+	}
+}
+
+country_event = {
+	id = yugoslavia.28
+	title = yugoslavia.28.t
+	desc = yugoslavia.28.d
+	picture = GFX_report_treatyitaly
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_war_with = YUG }
+	}
+
+	option = {
+		name = yugoslavia.28.a
+		ai_chance = {
+			factor = 0
+		}
+			YUG = {
+				transfer_state = 163
+				transfer_state = 736
+				transfer_state = 837
+			}
+		ITA = {
+				 add_opinion_modifier = {
+
+					target = YUG
+					modifier = large_decrease	
+					}
+			       } 
+		YUG = {
+				 add_opinion_modifier = {
+
+					target = ITA
+					modifier = large_decrease	
+					}}
+					
+					YUG = { country_event = yugoslavia.47 }	
+	}
+
+	option = {
+		name = yugoslavia.28.b
+		ai_chance = {
+			factor = 99
+				}
+			YUG = { country_event = yugoslavia.45 }	
+			
+	}
+}
+
+  country_event = {
+	id = yugoslavia.30
+	title = yugoslavia.30.t
+	desc = yugoslavia.30.d
+	picture = GFX_report_zboor
+
+	is_triggered_only = yes
+
+	option = {
+		name = yugoslavia.30.a
+		ai_chance = { factor = 50 } 
+	}
+  }
+
+  country_event = {
+	id = yugoslavia.31
+	title = "Treaty Of Rome"
+	desc = "Yugoslavia wants to sign the treaty of friendship and respect of mutual territorial integrity. They seek closer cooperation between us, and maybe forming an allience one day."
+	picture = GFX_report_romeee
+
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "Sign The Treaty"
+		ai_chance = { factor = 85 } 
+		ITA = {
+				 add_opinion_modifier = {
+
+					target = YUG
+					modifier = large_increase	
+					}
+			       } 
+		YUG = {
+				 add_opinion_modifier = {
+
+					target = ITA
+					modifier = large_increase	
+					}}
+					diplomatic_relation = { 
+	                        country = YUG 
+	                        relation = non_aggression_pact  
+                          }
+			YUG={
+			remove_state_core = 163
+			remove_state_core = 736
+			remove_state_core = 837
+			}
+			YUG = { give_military_access = ITA }
+			ITA={diplomatic_relation = {
+				country = YUG
+				relation = docking_rights
+				active = yes
+            }}
+		
+		
+			YUG = { country_event = yugoslavia.56 }	
+				
+	}
+
+	option = {
+		name = "Refuse them"
+		ai_chance = { factor = 15 } 
+		YUG = {
+				 add_opinion_modifier = {
+
+					target = ITA
+					modifier = medium_decrease	
+					}
+			 } 
+			 hidden_effect={
+				   YUG={
+		add_political_power=-25
+	}}
+	YUG = { country_event = yugoslavia.57 }	
+	
+	}
+	
+
+  }  
+
+country_event = {
+	id = yugoslavia.32
+	title = "Assassination of Vladko Maček!"
+	desc = "Chaos in Belgrade parliament! After tense dispute between Maček's HSS (Croatian Peasant Party) and Stojadinović's JRZ (Yugoslav Radical Union), a fight broke out leaving several politicians dead. Unfortunately, Vladko Maček was amongst them."
+	picture = GFX_report_assmacek
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Somebody should have done this before"
+		ai_chance = { factor = 50 } 
+	}
+}
+
+country_event = {
+	id = yugoslavia.33
+	title = "Yugoslavia Stays United!"
+	desc = "After prolonged and harsh discussion, agreement was finally reached. While Slovens and Macedonians didn't agree yet, Croats did. They negotiated more influence for Croatia in politics, and decentralization of Yugoslavia."
+	picture = GFX_report_yugomap
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = "A lot of Croats are enraged with this decision, as they hoped for greater autonomy"
+		ai_chance = { factor = 99 } 
+	}
+}
+
+country_event = {
+	id = yugoslavia.34
+	title = "Change in Course in Yugoslavia!"
+	desc = "Regency Council declared that they are willing to negotiate with opposition in order to restore stability in Yugoslavia! We will see how situation evolves, but opposition will surely take this chance!"
+	picture = GFX_report_stojadinko
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = "Lift the ban on communist parties."
+		ai_chance = { factor = 50 } 
+		add_popularity = {
+				popularity=0.02
+				ideology = communism
+				}
+	}
+
+	option = {
+		name = "Give support to democratic opposition."
+		ai_chance = { factor = 50 } 
+		add_popularity = {
+				popularity=0.02
+				ideology = democratic
+				}
+	}
+}
+
+country_event = {
+	id = yugoslavia.35
+	title = "Regency Council knows the best!"
+	desc = "Regency Council declared that they will rule the country until Peter II. comes of age! They appointed new governemnt with Milan Stojadinović as prime minister, and announced that they will continue with policies of our late king. "
+	picture = GFX_report_stojadinko
+
+	is_triggered_only = yes
+	
+
+	
+	option = {
+		name = "Milan Stojadinović will help us get through this crisis!"
+		ai_chance = { factor = 80 } 
+		add_popularity = {
+				popularity=0.02
+				ideology = neutrality
+				}
+	}
+
+	option = {
+		name = "It's time for Fascists to take this chance and help this country!"
+		ai_chance = { factor = 20 } 
+		add_popularity = {
+				popularity=0.02
+				ideology = fascism
+				}
+	}
+}
+
+country_event = {
+	id = yugoslavia.36
+	title = "Yugoslavia wants to unite Macedonia!"
+	desc = "After Yugoslavian accusations that Greek government is treating Yugoslavs in Greece badly, Yugoslavian fascists, backed up by majority of Macedonians, demanded from Greece to hand them Central Macedonia!"
+	picture = GFX_report_yugoingeeeece
+
+	is_triggered_only = yes
+
+	
+
+	trigger = {
+		NOT = { has_war_with = YUG }
+	}
+
+	option = {
+		name = "Give Them Central Macedonia"
+		ai_chance = {
+			factor = 10
+		}
+			YUG = {
+				transfer_state = 731
+				diplomatic_relation = { 
+	                        country = YUG
+	                        relation = non_aggression_pact 
+                               }
+			}
+			YUG = { country_event = yugoslavia.58 }
+	}
+
+	option = {
+		name = "Defend Our Land!"
+		ai_chance = {
+			factor = 90
+				}
+				YUG = { country_event = yugoslavia.59 }
+			
+	}
+}
+
+country_event = {
+	id = yugoslavia.37
+	title = "Croatia broke away from Yugoslavia!"
+	desc = "After coup that happened in Yugoslavia, Croatian far-right militants, Ustashe, led by Ante Pavelić, broke away from Yugoslavia and requested our assistance! We can help them, expand our influence and establish our puppet state led by Pavelić or leave them to fight Yugoslavia alone."
+	picture = GFX_report_coupy
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Puppet Croatia and Attack Yugoslavia"
+		trigger = {
+		}
+		ai_chance = { 
+			base = 99
+		}
+		
+		
+
+		GER = {
+				 puppet = CRO
+		                }
+			add_stability=-0.02
+			YUG = {
+				declare_war_on = {
+					target = CRO
+					type = annex_everything
+				}}
+    }
+	
+	option = {
+		name = "We don't need more problems in the Balkans"
+	
+		add_stability=0.02
+    }
+
+
+}
+
+country_event = {
+	id = yugoslavia.38
+	title = "Yugoslavia left League Of Nations!"
+	desc = "After fascist dictatorship took over, Yugoslavia, just like Germany and Japan did in 1933 and Italy in 1937, left league of nations! It's an act that will bring these four nations together while pursuing world domination."
+	picture = GFX_report_league
+
+	is_triggered_only = yes
+
+	
+
+	trigger = {
+	}
+
+	option = {
+		name = "Why does it even exist?"
+		ai_chance = {
+			factor = 99
+		}		
+	}
+}
+
+country_event = {
+	id = yugoslavia.39
+	title = "Yugoslavia wants to buy our guns"
+	desc = "Yugoslavian governemnt is rearming their military and they chose our model of machine guns as one of the few they are interested in. They hope for a fast deal as their military is in great need of weapons."
+
+	is_triggered_only = yes
+
+	
+
+	trigger = {
+	}
+
+	option = {
+		name = "Accept their bid."
+		ai_chance = {
+			factor = 80
+		}	
+		trigger = {
+			has_equipment = { infantry_equipment > 10000 }
+		}
+		add_timed_idea={
+			days=140
+			idea=YUG_yug_business
+		}
+		YUG = { country_event =yugoslavia.49}	
+		YUG={
+			add_timed_idea={
+			days=140
+			idea=YUG_cze_debt
+		}
+		}
+		YUG={
+		add_equipment_to_stockpile = {
+   				 	type = infantry_equipment_0
+    				amount = 10000
+    				producer = CZE
+		}}
+
+		add_equipment_to_stockpile = {
+
+        type = infantry_equipment_0
+
+        amount = -10000
+
+    	}	
+	}
+
+	option = {
+		name = "Refuse them"
+		ai_chance = {
+			factor = 20
+		}		
+		YUG = { country_event = yugoslavia.44 }	
+	}
+}
+
+country_event = {
+	id = yugoslavia.40
+	title = "Yugoslavia wants to buy our support equipment"
+	desc = "After many successful deals in the last few years, Yugoslavia is again trying to make a deal with us. This time they want to buy support equipment while pursuing a goal of fully equipped army. "
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	option = {
+	
+	
+		name = "Accept their bid."
+		ai_chance = {
+			factor = 80
+		}	
+		trigger = {
+			has_equipment = { support_equipment > 2000 }
+		}
+		add_timed_idea={
+			days=70
+			idea=YUG_yug_business2
+		}
+		YUG = { country_event =yugoslavia.49}	
+		YUG={
+			add_timed_idea={
+			days=70
+			idea=YUG_cze_debt2
+		}
+		}
+		YUG={
+		add_equipment_to_stockpile = {
+   				 	type = support_equipment
+    				amount = 2000
+    				producer = CZE
+		}}
+
+		add_equipment_to_stockpile = {
+
+        type = support_equipment
+
+        amount = -2000
+
+    	}	
+	}
+
+	option = {
+		name = "Refuse them"
+		ai_chance = {
+			factor = 20
+		}
+		YUG = { country_event = yugoslavia.44 }		
+	}
+}
+
+country_event = {
+	id = yugoslavia.41
+	title = "Yugoslavia proposes mutual defense pact"
+	desc = "With fascism rising in the west and communism in the east, Yugoslavian governemnt proposed mutual defense pact in order to secure peace in the Balkans."
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	option = {
+		name = "Accept"
+		ai_chance = {
+			factor = 80
+		}	
+		trigger = {
+			has_government=democratic
+		}
+		YUG = {give_guarantee = GRE}
+		GRE = {give_guarantee = YUG}
+		YUG = { country_event = yugoslavia.54 }
+		diplomatic_relation = { 
+	                        country = YUG 
+	                        relation = non_aggression_pact  
+                          }
+	}
+
+	option = {
+		name = "Accept"
+		ai_chance = {
+			factor = 50
+		}	
+		trigger = {
+			has_government=neutrality
+		}
+		YUG = {give_guarantee = GRE}
+		GRE = {give_guarantee = YUG}
+		YUG = { country_event = yugoslavia.54 }
+		diplomatic_relation = { 
+	                        country = YUG 
+	                        relation = non_aggression_pact  
+                          }
+	}
+
+	option = {
+		name = "Refuse them"
+		ai_chance = {
+			factor = 20
+		}		
+		YUG = { country_event = yugoslavia.55 }
+	}
+}
+
+country_event = {
+	id = yugoslavia.42
+	title = "Yugoslavia offers us basing rights"
+	desc = "Yugoslavia, communist pride of the Balkans, is willing to give us military access in order to stabilise the region.Rising nationalism in neighbouring countries and Axis expansionism policy is worrying and they ask for our help in order to sustain enemies."
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Accept the offer"
+		ai_chance = {
+			factor = 90
+		}
+		diplomatic_relation = { 
+	                        country = YUG 
+	                        relation = non_aggression_pact  
+                          }
+		YUG = { give_military_access = SOV }
+		
+		
+		SOV = {
+				 add_opinion_modifier = {
+
+					target = YUG
+					modifier = large_increase	
+					}
+			       } 
+				   
+		YUG = {
+				 add_opinion_modifier = {
+
+					target = SOV
+					modifier = large_increase	
+					}}
+					YUG = { country_event = yugoslavia.52 }
+	}
+
+	option = { 
+		name = "Refuse"
+		ai_chance = {
+			factor = 10
+		}
+		YUG = { country_event = yugoslavia.53 }
+	}
+
+}
+
+country_event = {
+	id = yugoslavia.43
+	title = "Treaty of Maribor"
+	desc = "Yugoslavia wants to sign economic and diplomatic treaty with us. We would enact non-aggression pact with them, and they would give us rights to some of their resources."
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Accept the offer"
+		ai_chance = {
+			factor = 85
+		}
+		
+		YUG = { country_event = yugoslavia.50 }	
+		GER={diplomatic_relation = { 
+	                        country = YUG 
+	                        relation = non_aggression_pact  
+                          }}	
+		YUG = { give_military_access = GER }
+		YUG = {
+					give_resource_rights = { receiver = GER state = 826 }
+				}
+		
+		GER = {
+			 add_opinion_modifier = {
+
+					target = YUG
+					modifier = medium_increase	
+					}
+			       } 
+				   
+		YUG = {
+				 add_opinion_modifier = {
+
+					target = GER
+					modifier = medium_increase	
+					}}
+		
+		
+	}
+
+	option = { 
+		name = "Refuse"
+		ai_chance = {
+			factor = 15
+		}
+		YUG = { country_event = yugoslavia.51 }	
+	}
+
+}
+
+country_event = {
+	id = yugoslavia.44
+	title = "Czechoslovakia refuses"
+	desc = "Either because they are in need of it themselves or for political reasons, Czechoslovakian government refuses to make millitary trade deal with us."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Curse them!"
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	option = { 
+		name = "It wasn't necessary anyways."
+
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+}
+
+country_event = {
+	id = yugoslavia.45
+	title = "Italy is furious!"
+	desc = "Italian government promptly declined our request and took it as a grave insult. We must calm down the situation or risk going to war with the Apeninian giant."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Istria and Zara are ours and ours only!"
+		ai_chance = {
+			factor = 30
+		}
+
+		 
+				ITA = {
+					add_war_support = 0.05
+				}
+		
+		YUG = {
+				create_wargoal = {
+	                   type = take_state_focus
+	                   target = ITA
+	                  generator = { 163 736 837 }
+                              }
+			}
+		 
+				YUG = {
+					add_political_power = 25
+					add_war_support = 0.05
+				}
+		
+	}
+
+	option = { 
+		name = "We will acknowledge Italian soverignty over Istria and Zara...for now."
+
+		ai_chance = {
+			factor = 70
+		}
+		
+		ITA = {
+					add_political_power = 25
+					add_stability = 0.05
+				}
+		
+		 
+				YUG = {
+					add_political_power = -50
+					add_stability = -0.05
+				}
+		
+		YUG = {add_opinion_modifier = {
+
+					target = ITA
+					modifier = large_decrease	
+					}}
+
+	}
+
+}
+
+country_event = {
+	id = yugoslavia.46
+	title = "Romania refuses!"
+	desc = "Romanian government refused to hand Banat back to our control. Tensions are high and both militaries are on the borders."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Romania has no right to hold Banat"
+		ai_chance = {
+			factor = 80
+		}
+		
+				YUG = {
+					add_war_support = 0.05
+				}
+				YUG = {
+				create_wargoal = {
+	                   type = take_state_focus
+	                   target = ROM
+	                  generator = { 82 }
+                              }
+			}
+		}
+		option = {
+		name = "Back down"
+		ai_chance = {
+			factor = 20
+		}
+		YUG={add_stability=-0.05
+		add_political_power=-25}
+		
+		 }
+}
+
+country_event = {
+	id = yugoslavia.47
+	title = "Italy cedes Istria and Zara to us"
+	desc = "Italians were never majority of the population in these regions so they made the right decision to cede these territories to us. This has the potential to spark good and lasting friendship between the two nations."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "They made the right choice"
+		ai_chance = {
+			factor = 50
+		}
+		YUG={add_stability=0.05
+		add_political_power=50}
+	}
+
+	
+
+}
+
+
+country_event = {
+	id = yugoslavia.49
+	title = "Czechoslovakia agrees"
+	desc = "Czechoslovakian government signed the contract to sell millitary equipment to us. Price was high but this is essential to us."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "We will turn it to good use."
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.48
+	title = "Romania agrees"
+	desc = "The rest of the Banat is finally under our control. With Banat in our hands, we have made one step foward to fulfilling the promise of unification of all southern Slavs"
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Welcome to motherland."
+		ai_chance = {
+			factor = 99
+		}
+		YUG={add_political_power=50}
+	}
+}
+country_event = {
+	id = yugoslavia.50
+	title = "Germany accepted the deal"
+	desc = "After only few weeks of negotiations, Germany decided to finish the deal with us. We will enact the non-aggression pact with them but we will give them military access and rights to resources in West Sandžak."
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Hopefully our partnership will last forever!"
+		ai_chance = {
+			factor = 99
+		}
+		
+	}
+}
+country_event = {
+	id = yugoslavia.51
+	title = "Germany refused"
+	desc = "German diplomats were not satisfied with the deal and refused to sign it. Unfortunately we can't count on the help of our northern neigbour in this case. "
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "We don't need them anyways."
+		ai_chance = {
+			factor = 99
+		}
+		YUG={add_political_power=-25}
+	}
+}
+country_event = {
+	id = yugoslavia.52
+	title = "Soviet brothers accepted the deal."
+	desc = "With the Soviet help, we can restabilize the region and secure our freedom. With fascist powers in the east, west and north of our counry, we are surrounded on almost all fronts and their help is essential."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "For the bigger cause!"
+		ai_chance = {
+			factor = 99
+		}
+		
+	}
+}
+country_event = {
+	id = yugoslavia.53
+	title = "Soviet union refused"
+	desc = "Soviet union refused to accept the deal. In case of the war, they don't want to waste their military industry on another, not so important, frontline. We have to prepare our army without their help as the world is on the brink of another war."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "We don't need them anyways."
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.54
+	title = "Greece accepted!"
+	desc = "With Europe on the brink of another war, we must secure safe and stable Balkans and we can do that with Greek help! Just like in the Great War, we will be victorious with our Greek brothers!"
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Great"
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+country_event = {
+	id = yugoslavia.55
+	title = "Greece refused our mutual defense pact."
+	desc = "Greek government refused our proposal. They don't want another war as they still feel the consequences of the last one."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "We don't need them anyways."
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+country_event = {
+	id = yugoslavia.56
+	title = "Italy accepted our offer."
+	desc = "Italy accepted our offer of friendship and respect of mutual territorial integrity. As tensions rise in Europe, we are glad to be on good terms with our western neighbour and potential ally."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Finally on good terms with Italy"
+		ai_chance = {
+			factor = 99
+		}
+		
+	}
+}
+country_event = {
+	id = yugoslavia.57
+	title = "Italy rejected our treaty."
+	desc = "Italian government rejected our treaty stating that Dalmatia is their rightful land earned after The Great War. Almost 20 years after the Treaty of Rapallo, we are once again having diplomatic issues with Italy."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "We don't need them anyways."
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.58
+	title = "Macedonia is ours!"
+	desc = "Greek government, scared of another devastating war, decided to give in and gave us control over Macedonia."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "They made the right choice"
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+country_event = {
+	id = yugoslavia.59
+	title = "Greece refused"
+	desc = "Greek government promptly refused our request. Their military is already prepared at the borders in case of the war."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Liberate Yugoslavs in Macedonia"
+		ai_chance = {
+			factor = 85
+		}
+		YUG = {
+				create_wargoal = {
+	                   type = take_state_focus
+	                   target = GRE
+	                  generator = { 731 }
+                              }
+			}
+			YUG={add_stability=0.05
+			add_war_support=0.05}
+	}
+	option = { 
+		name = "Apologize to them"
+		ai_chance = {
+			factor = 15
+		}
+		YUG={add_war_support=-0.05
+		add_stability=-0.05
+		add_political_power=-50}
+	}
+}
+
+country_event = {
+	id = yugoslavia.60
+	title = "Yugoslavia wants back some of the territories."
+	desc = "Yugoslavia wants back Sarajevo and Srijem. After the coup in Yugoslavia, we managed to break free from them and take some territory in Bosnia. Now, new Yugoslavian government wants that land back, specifically Sarajevo and Srijem."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Give them Sarajevo and Srijem."
+		ai_chance = {
+			factor = 25
+		}
+		YUG = {
+				transfer_state = 104
+				transfer_state = 815
+				
+			}
+		
+			add_stability=-0.05
+			add_war_support=-0.05
+	}
+	option = { 
+		name = "Give them only Sarajevo."
+		ai_chance = {
+			factor = 65
+		}
+		YUG = {
+				transfer_state = 104
+				
+				
+			}
+	
+			add_stability=0.05
+			add_war_support=-0.05
+	}
+	option = { 
+		name = "Refuse them."
+		ai_chance = {
+			factor = 10
+		}
+		add_stability=-0.05
+		add_war_support=0.05
+	}
+}
+
+country_event = {
+	id = yugoslavia.61
+	title = "Yugoslavia wants access to the Mediterranean Sea."
+	desc = "During the partition of Yugoslavia, we didn't expect much resistance from the Yugoslavs but we were wrong. We can either continue to pursue our goal of Mare Nostrum, or give back those territories to Yugoslavia in order relieve our military."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Give them access to the Mediterranean Sea"
+		ai_chance = {
+			factor = 50
+		}
+		YUG = {
+				transfer_state = 105
+				
+			}
+		
+			add_stability=0.05
+			
+	}
+	option = { 
+		name = "Refuse them"
+		ai_chance = {
+			factor = 50
+		}
+			add_stability=-0.05
+			add_war_support=0.05
+	}
+}
+
+country_event = {
+	id = yugoslavia.62
+	title = "Yugoslavia wants Vojvodina back."
+	desc = "During the partition of Yugoslavia, we finally gained back Vojvodina, Hungarian land handed to Yugoslavia after Treaty of Trianon in 1920. Now Yugoslavia wants that land back stating that majority of population in Vojvodina are Serbs."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Give them Vojvodina."
+		ai_chance = {
+			factor = 10
+		}
+		YUG = {
+				transfer_state = 45
+				
+			}
+		
+			add_stability=-0.05
+			add_war_support=-0.05
+			
+	}
+	option = { 
+		name = "Refuse them"
+		ai_chance = {
+			factor = 90
+		}
+			add_stability=0.05
+			add_war_support=0.05
+	}
+}
+
+country_event = {
+	id = yugoslavia.63
+	title = "Yugoslavian Agents Attacked Ustashe Camps in Italy"
+	desc = "Yugoslavian agents attacked Ustashe camps in Italy today. While doing that, they also damaged local infrastructure and buildings. We cannot tolerate this behaviour from Yugoslavian communists in our own country."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Make them demilitarize their borders!"
+		ai_chance = {
+			factor = 75
+		}
+		add_stability=0.05
+		add_war_support=0.05
+		YUG = {
+			add_stability=-0.05
+			add_war_support=-0.1
+			add_political_power=-25
+			103={
+					set_demilitarized_zone=yes
+				}
+			821={
+					set_demilitarized_zone=yes
+			}
+			102={
+					set_demilitarized_zone=yes
+				}
+			820={
+					set_demilitarized_zone=yes
+			}
+			}		
+	}
+	option = { 
+		name = "Issue a diplomatic objection"
+		ai_chance = {
+			factor = 25
+		}
+			add_stability=-0.05
+			add_war_support=-0.05
+	}
+}
+
+country_event = {
+	id = yugoslavia.64
+	title = "Yugoslavia Remilitarized their borders!"
+	desc = "Yugoslavian Army today moved their troops into demilitarized zone! Their breached our agreement and we have to react!"
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Attack their industry!"
+		ai_chance = {
+			factor = 60
+		}
+		add_stability=0.05
+		add_war_support=0.05
+		YUG = {
+			add_stability=-0.05
+			add_war_support=0.1
+			add_political_power=50
+			
+			add_timed_idea={
+				idea=YUG_Civilian_Spending
+				days=35
+			}
+			add_timed_idea = { 
+				idea = YUG_Selective_Treatement 
+				 days = 35 }
+			}	
+
+			
+	}
+	option = { 
+		name = "Issue a diplomatic objection"
+		ai_chance = {
+			factor = 40
+		}
+			add_stability=-0.02
+			add_war_support=-0.02
+	}
+}
+
+country_event = {
+	id = yugoslavia.65
+	title = "Yugoslavia proposes non-aggression pact"
+	desc = "Yugoslavian governemnt proposed non-aggression pact in order to secure peace in the Balkans in these turbulent times."
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	option = {
+		name = "Accept"
+		ai_chance = {
+			factor = 80
+		}	
+		trigger = {
+			has_government=democratic
+		}
+		YUG = {give_guarantee = BUL}
+		BUL = {give_guarantee = YUG}
+		YUG = { country_event = yugoslavia.54 }
+	}
+
+	option = {
+		name = "Accept"
+		ai_chance = {
+			factor = 40
+		}	
+		trigger = {
+			has_government=neutrality
+		}
+		BUL={diplomatic_relation = { 
+	                        country = YUG 
+	                        relation = non_aggression_pact  
+                          }}
+		YUG = { country_event = yugoslavia.54 }
+	}
+
+	option = {
+		name = "Refuse them"
+		ai_chance = {
+			factor = 60
+		}		
+		YUG = { country_event = yugoslavia.55 }
+	}
+}
+
+country_event = {
+	id = yugoslavia.66
+	title = "Bulgaria accepted!"
+	desc = "With Europe on the brink of another war, we must secure safe and stable Balkans and we can do that with Bulgarian help!"
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "Great"
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+country_event = {
+	id = yugoslavia.67
+	title = "Bulgaria refused our mutual defense pact."
+	desc = "Bulgarian government refused our proposal. They are maybe preparing to achieve their Greater Bulgaria dream with annexation of Macedonia."
+	
+	is_triggered_only = yes
+	
+
+	option = { 
+		name = "We don't need them anyways."
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.68
+	title = "New United Opposition"
+	desc = "After losing the 1935 elections againts Bogoljub Jevtić, new talks have started between Davidović and Maček in order to establish the new United Opposition. United Opposition would demand federalisation of the Yugoslavia under democratic principles. New elections are scheduled to happen in 1938 but with enough support, Regency Council would have to hold snap elections."
+
+	is_triggered_only = yes
+
+	option = {
+		name = "For the United Opposition!"
+		ai_chance = { factor = 99 } 
+	}
+}
+
+country_event = {
+	id = yugoslavia.69
+	title = yugoslavia.69.t
+	desc = yugoslavia.69.d
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "This is worrying"
+		add_timed_idea = {
+			idea = communist_propaganda
+			days = 180
+		}
+		
+	}
+}
+
+
+country_event = {
+	id = yugoslavia.70
+	title = yugoslavia.70.t
+	desc = yugoslavia.70.d
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "This is worrying"
+		add_timed_idea = {
+			idea = partisan_movements
+			days = 70
+		}
+		add_to_variable = {
+			var = yug_additional_communist_support
+			value = 0.05
+		}
+		
+	}
+}
+
+
+country_event = {
+	id = yugoslavia.71
+	title = yugoslavia.71.t
+	desc = yugoslavia.71.d
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {
+		name = yugoslavia.71.a
+		add_timed_idea = {
+			idea = partisan_terrorism
+			days = 180
+		}
+		add_to_variable = {
+			var = yug_additional_communist_support
+			value = 0.1
+		}
+		set_variable = {
+			var = yug_total_com_size
+			value = party_popularity@communism
+		}
+		add_to_variable = {
+			var = yug_total_com_size
+			value = yug_additional_communist_support
+		}
+	}
+}
+
+
+country_event = {
+	id = yugoslavia.72
+	title = yugoslavia.72.t
+	desc = yugoslavia.72.d
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = {
+			var = yug_total_com_size
+			value = party_popularity@communism
+		}
+		add_to_variable = {
+			var = yug_total_com_size
+			value = yug_additional_communist_support
+		}
+	}
+
+	option = {
+		name = yugoslavia.72.a
+		trigger = {
+			num_of_controlled_states > 1
+		}
+		ai_chance = { 
+			factor = 100
+		}
+		set_country_flag = had_yugo_civil_war_flag
+		start_civil_war = {
+			ideology = communism
+			size = yug_total_com_size
+		}
+	}
+
+	option = {
+		name = yugoslavia.72.b
+		ai_chance = { 
+			factor = 0
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = communism 
+			popularity = yug_additional_communist_support
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					original_tag = BUL
+				}
+				set_cosmetic_tag = YUG_puppet_1
+			}
+			if = {
+				limit = {
+					original_tag = ALB
+				}
+				set_cosmetic_tag = YUG_puppet_2
+			}
+			if = {
+				limit = {
+					original_tag = GRE
+				}
+				set_cosmetic_tag = YUG_puppet_3
+			}
+			if = {
+				limit = {
+					original_tag = ROM
+				}
+				set_cosmetic_tag = YUG_puppet_4
+			}
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.73
+	title = yugoslavia.73.t
+	desc = yugoslavia.73.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.73.a
+		ai_chance = {
+			factor = 40
+		}
+		add_political_power=10
+		country_event = {
+			days=7
+						id = yugoslavia.74
+					}	
+	}
+}
+
+country_event = {
+	id = yugoslavia.74
+	title = yugoslavia.74.t
+	desc = yugoslavia.74.d
+	picture = GFX_report_event_finnish_letter
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.74.a
+		ai_chance = {
+			factor = 40
+		}
+		add_stability=-0.05
+		country_event = {
+			days=7
+						id = yugoslavia.75
+					}
+	}
+}
+
+
+country_event = {
+	id = yugoslavia.75
+	title = yugoslavia.75.t
+	desc = yugoslavia.75.d
+	picture = GFX_report_event_finnish_letter
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.75.a
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.76
+	title = yugoslavia.76.t
+	desc = yugoslavia.76.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.76.a
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.77
+	title = yugoslavia.77.t
+	desc = yugoslavia.77.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.77.a
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.78
+	title = yugoslavia.78.t
+	desc = yugoslavia.78.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.78.a
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.79
+	title = yugoslavia.79.t
+	desc = yugoslavia.79.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.79.a
+		ai_chance = {
+			factor = 40
+		}
+		hidden_effect={ country_event = {
+			days=2
+						id = yugoslavia.80
+					}}
+	}
+	
+}
+
+country_event = {
+	id = yugoslavia.80
+	title = yugoslavia.80.t
+	desc = yugoslavia.80.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.80.a
+		ai_chance = {
+			factor = 40
+		}
+		hidden_effect={
+		country_event = {
+			days=1
+						id = yugoslavia.81
+					}}
+		hidden_effect={
+		YUG={
+			if = {
+				limit = {
+					date < 1941.09.06
+				}
+				create_country_leader = {
+					name = "Peter II"
+					desc = "POLITICS_PETER_II_DESC"
+					picture = "portrait_YUG_peter_II_young.dds"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						underage_monarch
+					}
+				}
+				create_country_leader = {
+					name = "Peter II"
+					desc = "POLITICS_PETER_II_DESC"
+					picture = "portrait_YUG_peter_II_young.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						underage_monarch
+					}
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Peter II"
+					desc = "POLITICS_PETER_II_DESC"
+					picture = "Portrait_Yugoslavia_Peter_II.dds"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						legitimate_heir
+					}
+				}
+				create_country_leader = {
+					name = "Peter II"
+					desc = "POLITICS_PETER_II_DESC"
+					picture = "Portrait_Yugoslavia_Peter_II.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						legitimate_heir
+					}
+				}
+				hidden_effect = { set_country_flag = peter_is_of_age }
+			}
+						   
+			effect_tooltip ={
+					custom_effect_tooltip = create_two_units_tt
+			 }
+			
+
+			division_template = {
+						name = "Royal Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Yugoslavian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Yugoslavian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}	   
+
+			}
+				103={
+					set_demilitarized_zone=yes
+				}
+				821={
+					set_demilitarized_zone=yes
+				}
+				109={
+					set_demilitarized_zone=yes
+				}
+				822={
+					set_demilitarized_zone=yes
+				}
+				804={
+					set_demilitarized_zone=yes
+				}
+				102={
+					set_demilitarized_zone=yes
+				}
+			    820={
+					set_demilitarized_zone=yes
+				}
+				819={
+					set_demilitarized_zone=yes
+				}
+				106={
+					set_demilitarized_zone=yes
+				}
+				add_stability=-0.15
+		}
+	}
+	
+}
+
+country_event = {
+	id = yugoslavia.81
+	title = yugoslavia.81.t
+	desc = yugoslavia.81.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.81.a
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip=YUG_ndh_tt
+		
+		hidden_effect={
+		if = {
+			limit = {
+				CRO = {
+					exists = no
+				}
+				109 = { is_owned_and_controlled_by = YUG }
+			}
+			
+			CRO = { transfer_state = 109 }
+			
+			if = {
+				limit = {
+					103 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 103 }
+			}
+			if = {
+				limit = {
+					821 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 821 }
+			}
+			if = {
+				limit = {
+					804 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 804 }
+			}
+			if = {
+				limit = {
+					822 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 822 }
+			}
+			CRO = {
+				add_state_core = 804
+			}
+			104 = { add_claim_by = CRO }
+			825 = { add_claim_by = CRO }
+			824 = { add_claim_by = CRO }
+			CRO = {
+				
+				CRO = {
+				effect_tooltip ={
+					custom_effect_tooltip = create_seven_units_tt
+			 }
+			
+
+					division_template = {
+						name = "Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					109 = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					
+					
+					
+				}
+				GER = {
+					days=2
+					country_event = yugoslavia.37
+				}
+			}
+			YUG = {
+				create_wargoal = {
+					type = annex_everything
+					target = CRO
+				}
+			}
+		}
+		
+	if = {
+			limit = {
+				CRO = {
+					exists = yes
+					is_subject_of = YUG
+				}
+			}
+			
+			set_autonomy = { target = CRO autonomy_state = autonomy_free }
+			
+			if = {
+				limit = {
+					103 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 103 }
+			}
+			if = {
+				limit = {
+					109 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 109 }
+			}
+			if = {
+				limit = {
+					821 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 821 }
+			}
+			if = {
+				limit = {
+					804 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 804 }
+			}
+			if = {
+				limit = {
+					822 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 822 }
+			}
+			CRO = {
+				add_state_core = 804
+			}
+			104 = { add_claim_by = CRO }
+			825 = { add_claim_by = CRO }
+			824 = { add_claim_by = CRO }
+			
+			CRO = {
+				effect_tooltip ={
+				
+					custom_effect_tooltip = create_six_units_tt
+				
+			 }
+			
+
+					division_template = {
+						name = "Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					
+					
+					
+				}
+				GER = {
+					days=2
+					country_event = yugoslavia.37
+				}
+				YUG = {
+				create_wargoal = {
+					type = annex_everything
+					target = CRO
+				}
+			}
+		}
+		
+		
+		remove_state_core = 103
+		remove_state_core = 109
+		
+	
+		
+		CRO = {
+			change_tag_from = YUG
+		}		
+				
+	}
+	
+	}
+	}
+	}
+		
+		
+	
+	
+	option = {
+		name = yugoslavia.81.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip=YUG_yugaxis_tt
+		
+		hidden_effect={
+		if = {
+			limit = {
+				CRO = {
+					exists = no
+				}
+				109 = { is_owned_and_controlled_by = YUG }
+			}
+			
+			CRO = { transfer_state = 109 }
+			
+			if = {
+				limit = {
+					103 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 103 }
+			}
+			if = {
+				limit = {
+					821 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 821 }
+			}
+			if = {
+				limit = {
+					804 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 804 }
+			}
+			if = {
+				limit = {
+					822 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 822 }
+			}
+			CRO = {
+				add_state_core = 804
+			}
+			825 = { add_claim_by = CRO }
+			824 = { add_claim_by = CRO }
+			CRO = {
+				
+				CRO = {
+				effect_tooltip ={
+				
+					custom_effect_tooltip = create_four_units_tt
+				
+			 }
+			
+
+					division_template = {
+						name = "Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					
+					
+					
+					
+				}
+				GER = {
+					days=2
+					country_event = yugoslavia.82
+				}
+			}
+			
+		}
+		
+	if = {
+			limit = {
+				CRO = {
+					exists = yes
+					is_subject_of = YUG
+				}
+			}
+			
+			set_autonomy = { target = CRO autonomy_state = autonomy_free }
+			
+			if = {
+				limit = {
+					103 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 103 }
+			}
+			if = {
+				limit = {
+					821 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 821 }
+			}
+			if = {
+				limit = {
+					804 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 804 }
+			}
+			if = {
+				limit = {
+					822 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 822 }
+			}
+			CRO = {
+				add_state_core = 804
+			}
+			825 = { add_claim_by = CRO }
+			824 = { add_claim_by = CRO }
+			
+			CRO = {
+				effect_tooltip ={
+				
+					custom_effect_tooltip = create_four_units_tt
+				
+			 }
+			
+
+					division_template = {
+						name = "Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					
+					
+					
+					
+				}
+				GER = {
+					days=2
+					country_event = yugoslavia.82
+				}
+				
+		}
+		
+		
+
+            set_capital=106
+			
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.4
+				set_capital=107
+				states = { 107 108 816 764 45 105}
+			}
+
+				effect_tooltip ={
+					YUG = {
+					custom_effect_tooltip = create_four_units_tt
+							}
+					}
+			
+
+					division_template = {
+						name = "Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					104 = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Yugoslavian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					104 = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Yugoslavian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					106 = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Yugoslavian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					813 = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Yugoslavian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+				GER = {
+					days=2
+					country_event = yugoslavia.83
+				}
+				
+				random_country  = {
+        limit = {
+           original_tag=YUG
+		   NOT={has_government=fascism}
+        }
+       effect_tooltip ={
+					
+					custom_effect_tooltip = create_two_units_tt
+							
+					}
+			
+
+					division_template = {
+						name = "Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Yugoslavian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Yugoslavian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+		}
+		}
+		
+	}
+	
+	option = {
+		name = yugoslavia.81.c
+		ai_chance = {
+			factor = 99
+		}
+		custom_effect_tooltip=YUG_yugallied_tt
+		add_stability=-0.05
+		add_war_support=0.1
+		GER = {
+				create_wargoal = {
+					type = take_state_focus
+					target = YUG
+					generator = { 102 819 820 }
+				}
+			}
+		
+		
+	}
+}
+
+country_event = {
+	id = yugoslavia.82
+	title = "Croatia broke away from Yugoslavia"
+	desc = "After coup and civil war that happened in Yugoslavia, Croatian far-right militants, Ustashe, led by Ante Pavelić, broke away from Yugoslavia and requested our assistance! We can help them, expand our influence and establish the Croatian puppet state led by Pavelić."
+	picture = GFX_report_coupy
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Puppet Croatia"
+		trigger = {
+		}
+		ai_chance = { 
+			base = 90
+		}
+		
+		
+
+		GER = {
+				 puppet = CRO
+		                }
+			
+			
+		random_country  = {
+        limit = {
+           original_tag=YUG
+		   NOT={has_government=fascism}
+        }
+		CRO = {
+            declare_war_on = {
+                target = PREV 
+                type = annex_everything
+            }
+        }
+		}
+    }
+	
+	
+	option = {
+		name = "We don't need more problems in the Balkans"
+	
+		add_stability=0.02
+		ai_chance = { 
+			base = 10
+		}
+		
+		CRO = {
+            declare_war_on = {
+                target = PREV 
+                type = annex_everything
+            }
+        }
+    }
+
+
+}
+
+country_event = {
+	id = yugoslavia.83
+	title = "Yugoslav Civil War!"
+	desc = "After the coup that happened in Yugoslavia, it seems like anti-coup militants led by Dimitrije Ljotić established a front and started the civil war! We can assist them and expand our sphere of influence or don't waste any more of our resources in the Balkans."
+	picture = GFX_report_coupy
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Puppet Fascist Yugoslavia" 
+		trigger = {
+		}
+		ai_chance = { 
+			base = 99
+		}
+		
+		
+		if={
+				limit={
+							YUG=
+							{
+								owns_state=820
+								owns_state=819
+								owns_state=102
+								}
+						}
+		GER = {
+				
+				 transfer_state = 820
+				 transfer_state = 819
+				 transfer_state = 102
+		        }
+						}
+			add_stability=-0.02
+			
+			GER={ puppet = YUG}
+		random_country  = {
+        limit = {
+           original_tag=YUG
+		   NOT={has_government=fascism}
+        }
+         YUG = {
+            declare_war_on = {
+                target = PREV 
+                type = annex_everything
+            }
+        }
+		}
+	}
+	
+	option = {
+		name = "We don't need more problems in the Balkans"
+	
+		add_stability=0.02
+		ai_chance = { 
+			base = 1
+		}
+		random_country  = {
+        limit = {
+           original_tag=YUG
+		   NOT={has_government=fascism}
+        }
+         YUG = {
+            declare_war_on = {
+                target = PREV 
+                type = annex_everything
+            }
+        }
+		
+		}
+		}
+    
+
+
+}
+
+country_event = {
+	id = yugoslavia.84
+	title = "Croatia breaks away from Yugoslavia!"
+	desc = "In the middle of the war, Croatian forces decided to break free from Yugoslavia and request our assistance. Should we establish the Croatian puppet state or deal with them later?"
+	picture = GFX_report_coupy
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Puppet Croatia" 
+		trigger = {
+		}
+		ai_chance = { 
+			base = 99
+		}
+		
+		
+
+		GER = {
+				 puppet = CRO
+				
+		                }
+						
+					
+         CRO = {
+            declare_war_on = {
+                target = YUG 
+                type = annex_everything
+            }
+        }
+		
+		
+			add_stability=-0.02
+		
+    }
+	
+	option = {
+		name = "We will deal with them later"
+		ai_chance = { 
+			base = 1
+		}
+		GER={create_wargoal = {
+					type = take_state_focus
+					target = CRO
+					generator = { 109 }
+				}}
+		add_stability=0.02
+    }
+
+
+}
+
+country_event = {
+	id = yugoslavia.85
+	title = yugoslavia.85.t
+	desc = yugoslavia.85.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_government = fascism
+		OR = {
+			any_country = {
+				is_in_faction_with = GER
+				has_full_control_of_state = 107
+			}
+			GER = {
+				has_full_control_of_state = 107
+			}
+			YUG={NOT={controls_state=107
+			controls_state=108}}
+		}
+		YUG = {				
+			has_war_with = GER
+			surrender_progress>0.9
+			OR={
+			has_government=neutrality
+			has_government=fascism}
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = { 
+		ai_chance = { factor = 90 }
+		name = yugoslavia.85.a
+		
+		if = {
+			limit = {
+				HUN = {
+					exists = yes
+					OR = {
+						is_in_faction_with = GER
+						is_subject_of = GER
+					}
+				}
+			}
+			HUN = {
+				add_state_core = 45
+				transfer_state = 45
+				add_state_core = 819
+				transfer_state = 819
+			}
+		}
+		
+		if = {
+			limit = {
+				BUL = {
+					exists = yes
+					OR = {
+						is_in_faction_with = GER
+						is_subject_of = GER
+					}
+				}
+			}
+			BUL = {
+				add_state_core = 106
+				transfer_state = 106
+				add_state_core = 803
+				transfer_state = 803
+			}
+		}
+		
+		if = {
+			limit = {
+				ITA = {
+					exists = yes
+					OR = {
+						is_in_faction_with = GER
+						is_subject_of = GER
+					}
+				}
+			}
+			transfer_state = 102
+			transfer_state = 826
+			transfer_state = 802
+			transfer_state = 105
+			
+		}
+		
+		if = {
+			limit = {
+				CRO = {
+					exists = no
+				}
+			}
+			CRO = {
+				transfer_state = 103
+				transfer_state = 109
+				transfer_state = 821
+				transfer_state = 822
+				transfer_state = 804
+				transfer_state = 824
+				transfer_state = 825
+				transfer_state = 104
+				transfer_state = 815
+				add_state_core=103
+				add_state_core=109
+				add_state_core=821
+				add_state_core=822
+				add_state_core=804
+			}
+			CRO = {
+				effect_tooltip ={
+					custom_effect_tooltip = create_seven_units_tt
+			 }
+			
+
+					division_template = {
+						name = "Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					109 = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Croatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					
+					
+					
+				}
+			puppet = CRO
+		}
+		
+		if = {
+			limit = {
+				CRO = {
+					exists = yes
+					NOT = {
+						OR = {
+							is_in_faction_with = GER
+							is_subject_of = GER
+						}
+					}
+				}
+			}
+			CRO = {
+				transfer_state = 103
+				transfer_state = 109
+				transfer_state = 821
+				transfer_state = 822
+				transfer_state = 804
+				transfer_state = 824
+				transfer_state = 825
+				transfer_state = 104
+				transfer_state = 815
+				add_state_core=103
+				add_state_core=109
+				add_state_core=821
+				add_state_core=822
+				add_state_core=804
+			}
+			puppet = CRO
+		}
+		
+		if = {
+			limit = {
+				CRO = {
+					exists = yes
+					OR = {
+						is_in_faction_with = GER
+						is_subject_of = GER
+					}
+				}
+			}
+			CRO = {
+				transfer_state = 103
+				transfer_state = 109
+				transfer_state = 821
+				transfer_state = 822
+				transfer_state = 804
+				transfer_state = 824
+				transfer_state = 825
+				transfer_state = 104
+				transfer_state = 815
+				add_state_core=103
+				add_state_core=109
+				add_state_core=821
+				add_state_core=822
+				add_state_core=804
+			}
+		}
+		
+		SER = {
+			add_state_core = 764
+			add_state_core = 107
+			add_state_core = 108
+			add_state_core = 816
+			transfer_state = 107
+			transfer_state = 108
+			transfer_state = 764
+			transfer_state = 816
+			
+			remove_ideas = anti_german_military
+			
+			SER = {
+				effect_tooltip ={
+					custom_effect_tooltip = create_six_units_tt
+			 }
+			
+
+					division_template = {
+						name = "Yugoslavian Division"
+						priority = 1
+						division_names_group = YUG_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Serbian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Serbian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Serbian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Serbian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Serbian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Serbian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					
+					
+					
+				}
+		}
+		
+		puppet = SER
+		
+		set_state_controller = 820
+		
+		if = {
+			limit = {
+				SLV = {
+					exists = yes
+					NOT={OR = {
+						is_subject_of = GER
+						is_in_faction_with = GER
+					}}
+
+				}
+			}
+			SLV = {
+				transfer_state = 102
+				transfer_state = 820
+				transfer_state = 819
+			}
+		}
+		
+		
+		add_political_power = 50
+		add_stability=0.02
+	}
+	option = { 
+		ai_chance = { factor = 0 }
+		name = yugoslavia.85.b
+		
+		add_political_power = -25
+		add_stability=-0.05
+	}
+}
+
+country_event = {
+	id = yugoslavia.87
+	title = "Stojadinović-Maček talks"
+	desc = "Prime minister of Yugoslavia, Milan Stojadinović, will meet Vladko Maček, leader of Croatian opposition, in Zagreb today. They will discuss the Croatian Question and futures of both Yugoslavia and Croatia. It is known that Stojadinović wants to include more Croats in the governemnt while Maček wants maximum autonomy, and even indepedence."
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "This issue needs to be resolved quickly"
+		ai_chance = { factor = 50 } 
+	}
+
+}
+
+
+country_event = {
+	id = yugoslavia.86
+	title = yugoslavia.86.t
+	desc = yugoslavia.86.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = yugoslavia.86.a
+		ai_chance = { factor = 50 } 
+	}
+
+}
+
+
+###############################################
+###############################################
+###############################################
+###############################################
+

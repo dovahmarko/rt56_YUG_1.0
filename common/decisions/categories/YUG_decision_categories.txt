@@ -1,0 +1,279 @@
+YUG_Investment_Plans = {
+        priority=9
+	icon = category_generic
+
+	
+
+	allowed = {
+	original_tag = YUG
+		
+	          }
+     visible = {
+			has_completed_focus = YUG_General_Industry_Investments
+	           }
+			
+		
+	
+}
+
+YUG_commie_connections = {
+        priority=9
+	icon = category_generic
+
+	
+
+	allowed = {
+	original_tag = YUG
+		
+	          }
+     visible = {
+			has_completed_focus = YUG_Connect_All_Nations
+	           }
+			
+		
+	
+}
+
+YUG_communist_revolutions = {
+        priority=9
+		icon = category_generic
+
+	
+
+		allowed = {
+		original_tag = YUG
+	          }
+		visible = {
+			OR={
+			has_completed_focus = YUG_Revolution_in_Romania
+			has_completed_focus=YUG_Revolution_in_Bulgaria
+			has_completed_focus=YUG_Revolution_in_Albania
+			has_completed_focus=YUG_Revolution_in_Greece
+			}
+	           }
+			
+		
+	
+}
+	
+Bul_in_Yug = {
+        priority=9
+		icon = generic_form_nation
+
+
+		allowed = {
+		original_tag=YUG
+			has_full_control_of_state = 211
+			has_full_control_of_state = 212
+			has_full_control_of_state = 48
+			has_full_control_of_state = 801
+			NOT={has_war_with=BUL}
+			OR={
+			NOT={212={is_core_of=YUG}}
+			NOT={211={is_core_of=YUG}}
+			NOT={48={is_core_of=YUG}}
+			NOT={801={is_core_of=YUG}}
+	          }}
+		visible = {
+		original_tag=YUG
+			has_full_control_of_state = 211
+			has_full_control_of_state = 212
+			has_full_control_of_state = 48
+			has_full_control_of_state = 801
+			NOT={has_war_with=BUL}
+			OR={
+			NOT={212={is_core_of=YUG}}
+			NOT={211={is_core_of=YUG}}
+			NOT={48={is_core_of=YUG}}
+			NOT={801={is_core_of=YUG}}
+			}
+	           }
+	
+}
+	
+Greater_Yugoslavia = {
+        priority=9
+		icon = generic_form_nation
+
+
+		allowed = {
+		original_tag=YUG
+			has_full_control_of_state = 211
+			has_full_control_of_state = 212
+			has_full_control_of_state = 48
+			has_full_control_of_state = 801
+			has_full_control_of_state=44
+			has_full_control_of_state=805
+			has_full_control_of_state=836
+			has_full_control_of_state=163
+			has_full_control_of_state=736
+			has_full_control_of_state=837
+			has_full_control_of_state =82
+			OR={
+			NOT={212={is_core_of=YUG}}
+			NOT={211={is_core_of=YUG}}
+			NOT={48={is_core_of=YUG}}
+			NOT={801={is_core_of=YUG}}
+			NOT={44={is_core_of=YUG}}
+			NOT={805={is_core_of=YUG}}
+			NOT={836={is_core_of=YUG}}
+			NOT={163={is_core_of=YUG}}
+			NOT={736={is_core_of=YUG}}
+			NOT={837={is_core_of=YUG}}
+			}
+	          }
+		visible = {
+		is_subject = no
+			original_tag=YUG
+			has_full_control_of_state = 211
+			has_full_control_of_state = 212
+			has_full_control_of_state = 48
+			has_full_control_of_state = 801
+			has_full_control_of_state=	44
+			has_full_control_of_state=	805
+			has_full_control_of_state=	836
+			has_full_control_of_state=	163
+			has_full_control_of_state=	736
+			has_full_control_of_state=	837
+			has_full_control_of_state =82
+			OR={
+			NOT={212={is_core_of=YUG}}
+			NOT={211={is_core_of=YUG}}
+			NOT={48={is_core_of=YUG}}
+			NOT={801={is_core_of=YUG}}
+			NOT={44={is_core_of=YUG}}
+			NOT={805={is_core_of=YUG}}
+			NOT={836={is_core_of=YUG}}
+			NOT={163={is_core_of=YUG}}
+			NOT={736={is_core_of=YUG}}
+			NOT={837={is_core_of=YUG}}
+			}
+			
+        
+			
+	           }
+	
+}
+
+annex_yug_puppets = {
+        priority=9
+		icon = generic_form_nation
+
+
+		allowed = {
+		original_tag=YUG
+		stability>0.9
+		OR={
+		CRO={is_puppet_of=YUG}
+		BOS={is_puppet_of=YUG}
+		SLV={is_puppet_of=YUG}
+		MAC={is_puppet_of=YUG}
+		}
+		has_government=democratic
+		}
+		visible = {
+		original_tag=YUG
+		stability>0.9
+		OR={
+		CRO={is_puppet_of=YUG}
+		BOS={is_puppet_of=YUG}
+		SLV={is_puppet_of=YUG}
+		MAC={is_puppet_of=YUG}
+		}
+		has_government=democratic
+	           }
+	
+}
+	
+YUG_croatianuprising = {
+
+    icon = saf_anti_colonialist_crusade
+
+    allowed = {
+        original_tag = YUG
+    }
+
+    visible = {
+		has_war=no
+		NOT={OR={has_completed_focus=YUG_dealwithcro
+			has_completed_focus=YUG_Limited_autonomy}}
+		is_subject=no
+		has_government=fascism
+    }
+}
+
+
+
+YUG_Royalist_coup = {
+
+    icon = saf_anti_colonialist_crusade
+
+    allowed = {
+        original_tag = YUG
+    }
+
+    visible = {
+		has_war=no
+		NOT={has_idea=YUG_no_more_royals}
+		is_subject=no
+		has_government=communism
+    }
+}
+
+
+
+YUG_Royalist_uprising2 = {
+
+    icon = saf_anti_colonialist_crusade
+
+    allowed = {
+        original_tag = YUG
+    }
+
+    visible = {
+		has_war=no
+		has_idea=YUG_no_more_royals
+		is_subject=no
+		has_government=communism
+    }
+}
+
+YUG_Sustain_Royals = {
+        priority=10
+	icon = category_generic
+
+
+	allowed = {
+	original_tag = YUG
+		
+	          }
+			  
+     visible = {
+		has_war=no
+		NOT={has_idea=YUG_no_more_royals}
+		is_subject=no
+		has_government=communism
+		NOT = { has_global_flag = YUG_royals_crushed }
+	           }
+}
+
+YUG_roy_sustained = {
+        priority=9
+	icon = category_generic
+
+	
+
+	allowed = {
+	original_tag = YUG
+		
+	          }
+     visible = {
+			has_war=no
+	        NOT={has_idea=YUG_no_more_royals}
+	        is_subject=no
+		    has_government=communism
+			NOT = { has_global_flag = YUG_royals_crushed }
+	           }
+}
+	
+	

@@ -1,0 +1,112 @@
+CRO_historical = {
+	name = "Croatian historical plan"
+	desc = "Croatian historical path following Banate of Croatia and Independent State of Croatia"
+
+	allowed = {
+		original_tag = CRO
+	}
+	enable = {
+		is_historical_focus_on = yes
+		NOT={
+		OR={
+
+				OR={
+			has_game_rule = {
+						rule = yug_fragmentation_status 
+					option = YUG_FRAGMENTED 
+			}
+			has_game_rule = {
+						rule = yug_fragmentation_status 
+						option = YUG_FRAGMENTED_SERBIA
+			}
+			has_game_rule = {
+						rule = yug_fragmentation_status 
+						option = YUG_FRAGMENTED_CROATIA
+			}
+					}
+		
+	
+		has_government=fascist
+		
+		}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+			CRO_puppetban
+			CRO_givebansupport
+			CRO_zandermanija
+			CRO_home_guard
+			CRO_build_the_nation
+			CRO_ban
+			CRO_trading_infrastructures
+			CRO_serbianminority
+			CRO_construction_effort
+			CRO_foodration
+			CRO_production_effort
+			CRO_nojobs
+			CRO_infrastructure_effort
+			CRO_zagreb_investment_focus
+			CRO_Dalmatina
+			CRO_catholic_dominance_focus2
+			CRO_zandermanija2
+			CRO_antifascist
+			CRO_brigade_cro
+			CRO_bancommunism
+			CRO_kuna
+			CRO_expand_the_university_of_zagreb
+			CRO_integrate_muslim_croats_focus2
+			CRO_zupanije
+			CRO_production_effort_2
+			CRO_integrate_orthodox_croats_focus2
+			CRO_endrationing
+			CRO_givejobs
+			CRO_aviation_effort
+			CRO_expand_the_split_shipyards
+			CRO_helpcitizens
+			CRO_organisestatedem
+			CRO_armyofboc
+			CRO_pushforindepedence
+			CRO_joinallies
+			CRO_alliesport
+			CRO_industrial_planning
+			CRO_extra_tech_slot_2
+			CRO_small_arms
+			CRO_army_maneuvers
+			CRO_mountain_brigades
+			
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+

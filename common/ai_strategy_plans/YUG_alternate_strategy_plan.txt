@@ -1,0 +1,297 @@
+YUG_communist = {
+	name = "Yugoslavian communist plan"
+	desc = ""
+
+	allowed = {
+		original_tag = YUG
+	}
+	enable = {
+		OR = {
+			has_country_flag = YUG_AI_RANDOM_COMMUNIST
+			has_game_rule = {
+				rule = YUG_ai_behavior
+				option = COMMUNIST
+			}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		 YUG_Aftermath_Of_Marseilles_Assassination
+		 YUG_General_Industrialisation
+		 YUG_Market_Intergration
+		 YUG_Revolution
+		 YUG_Side_with_Tito
+		 YUG_Modernize_Farming_Techologies
+		 YUG_Panonian_Wheat_Production
+		 YUG_Industrial_Expansion
+		 YUG_Dispose_of_Foreign_Control
+		 YUG_Establish_Naval_Schools
+		 YUG_recognize_the_soviet_union
+		 YUG_Organize_Partisans
+		 YUG_Reorganize_Yugoslav_Armed_Forcees
+		 YUG_Ship_Production
+		 YUG_Jugoslavenska_Mornarica
+		 YUG_Jugoslavenska_Armija
+		 YUG_Small_Arms
+		 YUG_Proclaim_Revolution
+		 YUG_Unite_The_People
+		 YUG_Army_Maneuvers
+		 YUG_OZNA
+		 YUG_Communist_Volunteer_Forces
+		 YUG_Bratstvo
+		 YUG_Jedinstvo
+		 YUG_Fate_Of_Karadordevici
+		 YUG_Partisan_Tactics
+		 YUG_The_Peoples_Army
+		 YUG_SFRJ_Constitution
+		 YUG_basing_sov
+		 YUG_pan_slavic_workers_congress
+		 YUG_General_Industry_Investments
+		 YUG_Local_Self_Management
+		 YUG_University_Expantion
+		 YUG_Open_More_Factories
+		 YUG_Connect_All_Nations
+		 YUG_Defend_Zadar
+		 YUG_Leskosek_Line
+		 YUG_Anti_Fascist_Fortifications
+		 YUG_Jugoslavensko_Vazduhoplovstvo
+		 YUG_Zagreb_And_Montenegro_Air_Base
+		 YUG_Reinvest_Into_Civillian_Industry
+		 YUG_Motorized
+		 YUG_Mountain_Brigades
+		 YUG_Artillery
+		 YUG_Millitary_Threat
+		 YUG_Steelworks
+		 YUG_Mechanized
+		 YUG_Panonian_Oil_Reserves
+		 YUG_Supremacy_of_defense
+		 YUG_Anti-Tank_Technology
+		 YUG_Domestic_Production
+		 YUG_Rogozarski
+		 YUG_Zmaj
+		 YUG_Bomber_project
+		 YUG_Develop_Split
+		 YUG_Coastal_Defence
+		 YUG_Adriatic_Oil_Reserves
+		 YUG_Export_Wheat_Surpluss
+		 YUG_Kickstart_Shipping_Industry
+		 YUG_Open_More_Shipyards
+		 YUG_Electronics_Program
+		 YUG_Yugoslavian_Nuclear_Program
+		 YUG_Naval_Technology
+		 YUG_Naval_Bombers
+		 YUG_Our_Sea
+		 YUG_Yugoslavia_On_Land_Air_And_Sea
+		 
+	} 
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
+YUG_democratic = {
+	name = "Yugoslavian devolution plan"
+	desc = "Yugoslavia will devolve the union into autonomous states."
+
+	allowed = {
+		original_tag = YUG
+	}
+	enable = {
+		OR = {
+			has_country_flag = YUG_AI_RANDOM_DEMOCRATIC
+			has_game_rule = {
+				rule = YUG_ai_behavior
+				option = DEMOCRATIC
+			}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		YUG_Aftermath_Of_Marseilles_Assassination
+        YUG_General_Industrialisation
+        YUG_Support_The_Opposition
+        YUG_Market_Intergration
+        YUG_Invite_Foreign_Investors
+        YUG_Persuade_The_People
+        YUG_Coalition_With_Macek
+        YUG_Tackle_opponents
+        YUG_Modernize_Farming_Techologies
+        YUG_Establish_Naval_Schools
+        YUG_Establish_The_Yugoslav_Federation
+        YUG_Decentralization
+        YUG_Reorganize_Yugoslav_Armed_Forcees
+        YUG_Jugoslavenska_Armija
+        YUG_General_Industry_Investments
+        YUG_Jugoslavensko_Vazduhoplovstvo
+        YUG_Industrial_Reform
+        YUG_Establish_Embassies
+        YUG_Panonian_Wheat_Production
+        YUG_Recover_From_Regency
+        YUG_Cvetkovic_Macek_Agreement
+        YUG_Small_Arms
+        YUG_Army_Maneuvers
+        YUG_Artillery
+        YUG_Ship_Production
+        YUG_Jugoslavenska_Mornarica
+        YUG_Industrial_Expansion
+        YUG_Zagreb_And_Montenegro_Air_Base
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
+YUG_fascist = {
+	name = "Yugoslavian fascist plan"
+	desc = ""
+
+	allowed = {
+		original_tag = YUG
+	}
+	enable = {
+		OR = {
+			has_country_flag = YUG_AI_RANDOM_FASCIST
+			has_game_rule = {
+				rule = YUG_ai_behavior
+				option = FASCIST
+			}
+		}
+	}
+	abort = {
+	}
+
+	ai_national_focuses = {
+		YUG_Aftermath_Of_Marseilles_Assassination
+        YUG_support_the_current_government
+        YUG_ZBOR
+        YUG_Reorganize_Yugoslav_Armed_Forcees
+        YUG_Otadzbina_and_Budenje
+        YUG_Luftwaffe_ties
+        YUG_Jugoslavenska_Armija
+        YUG_General_Industrialisation
+        YUG_Market_Intergration
+        YUG_Jugoslavenska_Mornarica
+        YUG_Jugoslavensko_Vazduhoplovstvo
+        YUG_Small_Arms
+        YUG_Modernize_Farming_Techologies
+        YUG_Artillery
+        YUG_Motorized
+        YUG_Establish_Naval_Schools
+        YUG_Fascist_takeover
+        YUG_Form_JDK
+        YUG_Leave_League_Of_Nations
+        YUG_Dispose_of_Foreign_Control
+        YUG_General_Industrialisation
+        YUG_Fascist_unity
+        YUG_Croatian_question
+        YUG_Limited_autonomy
+        YUG_Macedonian_question
+        YUG_Slovene_question
+        YUG_German_economic_cooperation
+        YUG_Central_Managment
+        YUG_Restructure_the_army
+        YUG_Mobilization
+        YUG_Copy_German_Military_Industry
+        YUG_Mountain_Brigades
+        YUG_Mechanized
+        YUG_Invest_Into_Arms_Industry
+        YUG_Restructure_the_army
+        YUG_Appoint_Nedic
+        YUG_Open_More_Factories
+        YUG_Treaties_Of_Rome
+        YUG_Youth_support
+		
+		
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+

@@ -1,0 +1,141 @@
+on_actions = {
+	
+	on_ruling_party_change = {
+		effect = {
+	
+				if = {
+					limit = {
+						original_tag = CRO
+						has_government = communism
+					}
+					every_unit_leader = {
+						limit = {
+							OR = {
+								has_id = 91020
+                                has_id = 91021
+                                has_id = 91022
+                                has_id = 91023
+                                has_id = 91024
+                                has_id = 91010
+                                has_id = 91011
+                                has_id = 91012
+                                has_id = 91013
+                                has_id = 91014
+                                has_id = 91015
+                                has_id = 91016
+                                has_id = 91017					
+							}
+						}
+						set_nationality = FAK 
+					}
+					FAK={
+					every_unit_leader = {
+						limit = {
+							OR = {
+								has_id = 91000
+                                has_id = 91001
+                                has_id = 91002
+                                has_id = 91003
+                                has_id = 91004             			
+							}
+						}
+						set_nationality = CRO						
+					}
+					}
+				}
+				
+				if = {
+					limit = {
+						original_tag = CRO
+						has_government = fascism
+					}
+					FAK={
+					every_unit_leader = {
+						limit = {
+							OR = {
+								has_id = 91020
+                                has_id = 91021
+                                has_id = 91022
+                                has_id = 91023
+                                has_id = 91024
+                                has_id = 91010
+                                has_id = 91011
+                                has_id = 91012
+                                has_id = 91013
+                                has_id = 91014
+                                has_id = 91015
+                                has_id = 91016
+                                has_id = 91017					
+							}
+						}
+						set_nationality = CRO 
+					}
+					}
+					every_unit_leader = {
+						limit = {
+							OR = {
+								has_id = 91000
+                                has_id = 91001
+                                has_id = 91002
+                                has_id = 91003
+                                has_id = 91004             			
+							}
+						}
+						set_nationality = FAK						
+					}
+				}
+				
+				if = {
+					limit = {
+						original_tag = CRO
+						OR={
+						has_government = democratic
+						has_government = neutrality
+						}
+					}
+					FAK={
+					every_unit_leader = {
+						limit = {
+							OR = {
+								
+                                has_id = 91010
+                                has_id = 91011
+                                has_id = 91012
+                                has_id = 91013
+                                has_id = 91014
+                                has_id = 91015
+                                has_id = 91016
+                                has_id = 91017					
+							}
+						}
+						set_nationality = CRO 
+					}
+					}
+					every_unit_leader = {
+						limit = {
+							OR = {
+								has_id = 91000
+                                has_id = 91001
+                                has_id = 91002
+                                has_id = 91003
+                                has_id = 91004             			
+							}
+						}
+						set_nationality = FAK						
+					}
+					every_unit_leader = {
+						limit = {
+							OR = {
+								has_id = 91020
+                                has_id = 91021
+                                has_id = 91022
+                                has_id = 91023
+                                has_id = 91024          			
+							}
+						}
+						set_nationality = FAK						
+					}
+				}
+		}
+	}
+}

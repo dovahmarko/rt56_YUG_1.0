@@ -1,0 +1,133 @@
+YUG_historical = {
+	name = "Yugoslavian historical plan"
+	desc = ""
+
+	allowed = {
+		original_tag = YUG
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = YUG_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = YUG_AI_RANDOM_HISTORICAL
+			has_game_rule = {
+				rule = YUG_ai_behavior
+				option = HISTORICAL
+			}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		YUG_Aftermath_Of_Marseilles_Assassination
+		YUG_support_the_current_government
+		YUG_General_Industrialisation
+		YUG_Ease_up_the_grip
+		YUG_Market_Intergration
+		YUG_Centralisation
+		YUG_Sign_the_Concordats
+		YUG_Support_Domestic_Industrialists
+		YUG_Dismiss_the_Concordats
+		YUG_Selective_Land_Distribution
+		YUG_Invite_Foreign_Investors
+		YUG_Establish_Naval_Schools
+		YUG_Prosecute_Opponents
+		YUG_Modernize_Farming_Techologies
+		YUG_Panonian_Wheat_Production
+		YUG_Italian_Friendship_Treaty
+		YUG_French_Friendship_Treaty
+		YUG_Stojadinovic_Macek_Talks
+		YUG_Infiltrate_Nationalist_Groups
+		YUG_Industrial_Expansion
+		YUG_Boost_Production		
+		YUG_Cvetkovic_Macek_Agreement
+		YUG_Reorganize_The_State		
+		YUG_Ban_Slovene_Nationalist_Parties
+		YUG_Set_Up_Government
+		YUG_VMRO_Crackdown
+		YUG_Ustasa_Crackdown
+		YUG_Reorganize_Army_and_Navy
+		YUG_Reorganize_Yugoslav_Armed_Forcees
+		YUG_Yugoslavian_Accession_To_The_Tripartite_Pact
+		YUG_Treaty_Of_Belgrade
+		YUG_Army_Maneuvers
+		YUG_Consolidate_German_Arms_Engineers
+		YUG_Consolidate_Italian_Naval_Engenieers
+		YUG_Demand_Thessaloniki
+		YUG_Motorized
+		YUG_Ship_Production
+		YUG_Supremacy_of_offense
+		YUG_Jugoslavensko_Vazduhoplovstvo
+		YUG_Zagreb_And_Montenegro_Air_Base
+		YUG_Industrial_Expansion
+		YUG_Anti-Tank_Technology
+		YUG_Support_Companies
+		YUG_General_Industry_Investments
+		YUG_Jugoslavenska_Mornarica
+		YUG_Form_Royal_Divisions
+		YUG_Purchase_foreign_Planes
+		YUG_Central_Managment
+		YUG_License_production
+		YUG_Fighter_license
+		YUG_Bomber_license
+		YUG_Invest_Into_Arms_Industry
+		YUG_Steelworks
+		YUG_Jugoslavenska_Armija
+		YUG_Small_Arms
+		YUG_Millitary_Threat
+		YUG_University_Expantion
+		YUG_Export_Wheat_Surpluss
+		YUG_Kickstart_Shipping_Industry
+		YUG_Develop_Kotor
+		YUG_Coastal_Defence
+		YUG_Naval_Technology
+		YUG_Submarine_Technology
+		YUG_Panonian_Oil_Reserves
+		YUG_Open_More_Shipyards
+		YUG_Naval_Bombers
+		YUG_Our_Sea
+		YUG_Adriatic_Oil_Reserves
+		YUG_Yugoslavia_On_Land_Air_And_Sea
+		YUG_Electronics_Program
+		YUG_Yugoslavian_Nuclear_Program
+
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
